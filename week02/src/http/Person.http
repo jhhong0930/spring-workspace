@@ -1,0 +1,23 @@
+### 친구 목록 조회
+GET http://localhost:8888/api/persons
+
+### 친구 생성
+POST http://localhost:8888/api/persons
+Content-Type: application/json
+
+{
+  "name": "sanha",
+  "age": 30
+}
+
+### 친구 정보 변경
+PUT http://localhost:8888/api/persons/1
+Content-Type: application/json
+
+{
+  "name": "sanha",
+  "age": 40
+}
+
+### 친구 정보 삭제
+DELETE http://localhost:8888/api/persons/1
