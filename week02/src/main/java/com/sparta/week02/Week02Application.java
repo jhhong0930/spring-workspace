@@ -12,8 +12,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import java.util.List;
 
-@SpringBootApplication
 @EnableJpaAuditing
+@SpringBootApplication
 public class Week02Application {
 
     public static void main(String[] args) {
@@ -34,8 +34,8 @@ public class Week02Application {
                 System.out.println(course.getTutor());
             }
 
-            CourseRequestDTO requestDTO = new CourseRequestDTO("웹개발의 봄, Spring", "임민영");
-            courseService.update(1L, requestDTO);
+            CourseRequestDTO requestDto = new CourseRequestDTO("웹개발의 봄, Spring", "임민영");
+            courseService.update(1L, requestDto);
             courseList = courseRepository.findAll();
             for (int i=0; i<courseList.size(); i++) {
                 Course course = courseList.get(i);
@@ -43,8 +43,6 @@ public class Week02Application {
                 System.out.println(course.getTitle());
                 System.out.println(course.getTutor());
             }
-
-            courseRepository.deleteAll();
         };
     }
 }
