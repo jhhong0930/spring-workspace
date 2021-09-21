@@ -3,3 +3,6 @@ GET http://localhost:8888/api/products
 
 ### 신규 상품 등록
 POST http://localhost:8888/api/products
+
+### 상품 검색
+GET http://localhost:8888/api/search?query=아이폰
