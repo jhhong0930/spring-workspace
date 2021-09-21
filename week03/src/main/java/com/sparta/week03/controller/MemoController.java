@@ -8,6 +8,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -29,9 +32,18 @@ public class MemoController {
         return memoRepository.save(memo);
     }
 
+    /**
+     * 메모 조회
+     */
     @GetMapping("/api/memos")
     public List<Memo> getMemos() {
-        return memoRepository.findAllByOrderByModifiedAtDesc();
+
+        // 어제 00:00:00
+        LocalDateTime start = LocalDateTime.of(LocalDate.now().minusDays(1), LocalTime.of(0, 0, 0));
+        // 오늘 23:59:59
+        LocalDateTime end = LocalDateTime.of(LocalDate.now(), LocalTime.of(23, 59, 59));
+
+        return memoRepository.findAllByModifiedAtBetweenOrderByModifiedAtDesc(start, end);
     }
 
     @PutMapping("/api/memos/{id}")
