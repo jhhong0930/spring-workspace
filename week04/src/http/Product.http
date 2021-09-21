@@ -1,2 +1,5 @@
 ### 등록된 전체 상품 목록 조회
 GET http://localhost:8888/api/products
+
+### 신규 상품 등록
+POST http://localhost:8888/api/products
