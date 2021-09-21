@@ -14,7 +14,6 @@ import javax.transaction.Transactional;
 public class ProductService {
 
     private final ProductRepository productRepository;
-    private final ProductService productService;
 
     @Transactional // 메소드 동작이 SQL 쿼리문임을 선언합니다.
     public Long update(Long id, ProductMypriceRequestDto requestDto) {
