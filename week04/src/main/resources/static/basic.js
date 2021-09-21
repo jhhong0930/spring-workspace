@@ -147,22 +147,22 @@ function showProduct() {
 function addProductItem(product) {
     // link, image, title, lprice, myprice 변수 활용하기
     return `<div class="product-card" onclick="window.location.href='${product.link}'">
-            <div class="card-header">
-                <img src="${product.image}"
-                     alt="">
-            </div>
-            <div class="card-body">
-                <div class="title">
-                    ${product.title}
+                <div class="card-header">
+                    <img src="${product.image}"
+                         alt="">
                 </div>
-                <div class="lprice">
-                    <span>${numberWithCommas(product.lprice)}</span>원
+                <div class="card-body">
+                    <div class="title">
+                        ${product.title}
+                    </div>
+                    <div class="lprice">
+                        <span>${numberWithCommas(product.lprice)}</span>원
+                    </div>
+                    <div class="isgood ${product.lprice > product.myprice ? 'none' : ''}">
+                        최저가
+                    </div>
                 </div>
-                <div class="isgood ${product.lprice > product.myprice ? 'none' : ''}">
-                    최저가
-                </div>
-            </div>
-        </div>`;
+            </div>`;
 }
 
 function setMyprice() {
@@ -178,4 +178,26 @@ function setMyprice() {
      * 5, 성공적으로 등록되었음을 알리는 alert를 띄운다.
      * 6. 창을 새로고침한다. window.location.reload();
      */
+    // 1. id가 myprice 인 input 태그에서 값을 가져온다.
+    let myprice = $("#myprice").val();
+    // 2. 만약 값을 입력하지 않았으면 alert를 띄우고 중단한다.
+    if (myprice === '') {
+        alert('값을 입력하세요');
+        return;
+    }
+    // 3. PUT /api/product/${targetId} 에 data를 전달한다.
+    $.ajax({
+        type: "PUT",
+        url: `/api/product/${targetId}`,
+        contentType: "application/json",
+        data: JSON.stringify({myprice: myprice}),
+        success: function (response) {
+            // 4. 모달을 종료한다. $('#container').removeClass('active');
+            $('#container').removeClass('active');
+            // 5, 성공적으로 등록되었음을 알리는 alert를 띄운다.
+            alert('성공적으로 등록되었습니다!');
+            // 6. 창을 새로고침한다. window.location.reload();
+            window.location.reload();
+        }
+    })
 }
