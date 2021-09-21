@@ -5,20 +5,27 @@ import com.sparta.week03.domain.MemoRepository;
 import com.sparta.week03.domain.MemoRequestDto;
 import com.sparta.week03.service.MemoService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
+@Slf4j
 public class MemoController {
 
     private final MemoRepository memoRepository;
     private final MemoService memoService;
 
+    /**
+     * 메모 작성
+     * @param requestDto
+     */
     @PostMapping("/api/memos")
     public Memo createMemo(@RequestBody MemoRequestDto requestDto) {
         Memo memo = new Memo(requestDto);
+        log.info("username = {}, contents = {}", memo.getUsername(), memo.getContents());
         return memoRepository.save(memo);
     }
 
