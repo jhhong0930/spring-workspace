@@ -7,15 +7,11 @@ import com.sparta.deep01.domain.ProductRequestDto;
 import java.sql.SQLException;
 import java.util.List;
 
-import java.sql.SQLException;
-import java.util.List;
-
 public class ProductService {
 
     private final ProductRepository productRepository;
 
-    public ProductService() {
-        ProductRepository productRepository = new ProductRepository();
+    public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
