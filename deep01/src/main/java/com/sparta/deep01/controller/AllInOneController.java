@@ -14,7 +14,7 @@ import java.util.List;
 public class AllInOneController {
 
     // 신규 상품 등록
-    @PostMapping("/api/products")
+//    @PostMapping("/api/products")
     public Product createProduct(@RequestBody ProductRequestDto requestDto) throws SQLException {
         // 요청받은 DTO 로 DB에 저장할 객체 만들기
         Product product = new Product(requestDto);
@@ -51,7 +51,7 @@ public class AllInOneController {
     }
 
     // 설정 가격 변경
-    @PutMapping("/api/products/{id}")
+//    @PutMapping("/api/products/{id}")
     public Long updateProduct(@PathVariable Long id, @RequestBody ProductMypriceRequestDto requestDto) throws SQLException {
         Product product = new Product();
 
@@ -93,7 +93,7 @@ public class AllInOneController {
     }
 
     // 등록된 전체 상품 목록 조회
-    @GetMapping("/api/products")
+//    @GetMapping("/api/products")
     public List<Product> getProducts() throws SQLException {
         List<Product> products = new ArrayList<>();
 
