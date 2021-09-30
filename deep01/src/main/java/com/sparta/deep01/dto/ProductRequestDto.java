@@ -1,4 +1,4 @@
-package com.sparta.deep01.domain;
+package com.sparta.deep01.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

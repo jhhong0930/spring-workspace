@@ -1,5 +1,6 @@
 package com.sparta.deep01.domain;
 
+import com.sparta.deep01.dto.ProductRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

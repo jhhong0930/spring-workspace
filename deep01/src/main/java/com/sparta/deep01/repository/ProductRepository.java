@@ -1,4 +1,4 @@
-package com.sparta.deep01.product;
+package com.sparta.deep01.repository;
 
 import com.sparta.deep01.domain.Product;
 

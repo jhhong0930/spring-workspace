@@ -1,11 +1,11 @@
-package com.sparta.deep01.product;
+package com.sparta.deep01.service;
 
 import com.sparta.deep01.domain.Product;
-import com.sparta.deep01.domain.ProductMypriceRequestDto;
-import com.sparta.deep01.domain.ProductRequestDto;
+import com.sparta.deep01.dto.ProductMypriceRequestDto;
+import com.sparta.deep01.dto.ProductRequestDto;
+import com.sparta.deep01.repository.ProductRepository;
 import org.springframework.stereotype.Component;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @Component

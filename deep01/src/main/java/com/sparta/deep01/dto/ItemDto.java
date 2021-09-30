@@ -1,4 +1,4 @@
-package com.sparta.deep01;
+package com.sparta.deep01.dto;
 
 import lombok.Getter;
 
