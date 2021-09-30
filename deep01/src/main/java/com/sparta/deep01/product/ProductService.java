@@ -3,10 +3,12 @@ package com.sparta.deep01.product;
 import com.sparta.deep01.domain.Product;
 import com.sparta.deep01.domain.ProductMypriceRequestDto;
 import com.sparta.deep01.domain.ProductRequestDto;
+import org.springframework.stereotype.Component;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Component
 public class ProductService {
 
     private final ProductRepository productRepository;
