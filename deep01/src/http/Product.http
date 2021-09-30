@@ -1,0 +1,24 @@
+### 상품 검색
+GET http://localhost:8888/api/search?query=맥북
+
+### 상품 등록
+POST http://localhost:8888/api/products
+Content-Type: application/json
+
+{
+  "title": "Apple <b>맥북</b> 에어 2020년형 M1 256G 골드 (MGND3KH/A)",
+  "link": "https://search.shopping.naver.com/gate.nhn?id=26101850523",
+  "image": "https://shopping-phinf.pstatic.net/main_2610185/26101850523.20210226084828.jpg",
+  "lprice": 1162580
+}
+
+### 상품 가격 변경
+PUT http://localhost:8888/api/products/1
+Content-Type: application/json
+
+{
+  "myprice": 25000
+}
+
+### 등록된 전체 상품 목록 조회
+GET http://localhost:8888/api/products
